@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "database": "db_lumen",
+      "username": "lumen",
+      "password": "lumen123456",
+      "name": "lumen-db"
+    }
+  ]
+}
