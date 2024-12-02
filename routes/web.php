@@ -15,10 +15,12 @@ use App\Http\Controllers\ExampleController;
 */
 
 $router->get('/', function () use ($router) {
-    return 'Hello World!';
+    return 'API Example Lumen Framework version ' . $router->app->version() . '!';
 });
 
 $router->group(['prefix' => 'api'], function () use ($router) {
-    $router->get('/', 'ExampleController@index');
-
+    $router->get('/example', 'ExampleController@index');
+    $router->post('/example', 'ExampleController@store');
+    $router->put('/example/{id}', 'ExampleController@update');
+    $router->delete('/example/{id}', 'ExampleController@destroy');
 });

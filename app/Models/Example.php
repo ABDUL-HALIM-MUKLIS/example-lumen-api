@@ -17,4 +17,25 @@ class Example extends Model
     {
         return DB::table('example')->get();
     }
+
+    public static function GetExampleById($id)
+    {
+        return DB::table('example')->where('id', $id)->first();
+    }
+
+    public static function SaveExample($data)
+    {
+        $id = DB::table('example')->insertGetId($data);
+        return $id;
+    }
+
+    public static function UpdateExample($id, $data)
+    {
+        return DB::table('example')->where('id', $id)->update($data);
+    }
+
+    public static function DeleteExample($id)
+    {
+        return DB::table('example')->where('id', $id)->delete();
+    }
 }
